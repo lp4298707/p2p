@@ -1,0 +1,19 @@
+{
+  "name": "p2papi",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "flyok666 <flyok666@126.com>"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.itsource.cn",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./lib",
+    "test",
+    "tests"
+  ]
+}
