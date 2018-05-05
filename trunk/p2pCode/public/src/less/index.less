@@ -1,40 +1,8 @@
 @colorWhite:white;
 @colorBlue:#09d;
+@deepBlue:#2e8ece;
 
-.firstNav .navbar-brand .glyphicon {
-  font-size: 24px;
-  font-style: italic;
-  color: @colorWhite;
-}
-.firstNav .navbar-collapse .nav a{
-  color: @colorWhite;
-}
-.navbar{
-  margin-bottom: 0;
-}
 
-.secondNav .navbar-left{
-  height: 80px;
-  line-height: 80px;
-  padding: 0px 15px;
-  font-size: 16px;
-}
-.secondNav .navbar-brand img{
-  margin-top: 11px;
-  margin-right: 30px;
-}
-.secondNav .navbar-left li:hover{
-  background: #f1f1f1;
-}
-.secondNav .navbar-left li a:hover{
-  color: @colorBlue;
-}
-.secondNav .navbar-left li a{
-  height: 80px;
-  width: 100px;
-  line-height: 50px;
-  text-align: center;
-}
 .feature01{
   background: url("../../images/feature01.png") no-repeat;
 }
@@ -50,8 +18,92 @@
 }
 .featureAll{
   margin-top: 10px;
+  height: 100px;
 }
 .featureAll>div>dt{
   font-size: 18px;
   margin: 10px 0;
 }
+.borrowing{
+  border-bottom: 1px solid #ccc;
+  span{
+    font-size: 24px;
+    color: @deepBlue;
+    font-weight: bold;
+    border-bottom: 3px solid @deepBlue;
+    padding: 0;
+    text-align: center;
+  }
+
+}
+.borrowingCon{
+  margin-top: 15px;
+  margin-bottom: 40px;
+  thead{
+    font-size: 18px;
+  }
+  tbody tr td{
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+.news{
+  margin-top: 20px;
+  a:hover{
+    text-decoration: none;
+    color: @colorBlue;
+  }
+}
+//页脚
+.footer{
+  margin-top: 40px;
+  padding-top:40px ;
+  padding-bottom:60px ;
+  background: #f8f8f8;
+  .container{
+    .weibo,.weixin{
+      p{
+        padding-left: 15px !important;
+      }
+      img{
+        width: 160px;
+      }
+    }
+  }
+}
+
+
+//768屏幕下的样式
+@media all and(max-width: 768px){
+  .featureAll>div{
+    padding: 56px 0 0 0;
+    margin-bottom: 74px;
+    background-position-x: 50%;
+    &>dd,&>dt{
+      text-align: center;
+    }
+  }
+  .featureAll{
+    height: 435px;
+  }
+}
+
+
+
+//992屏幕的样式
+@media all and(max-width: 992px){
+  .featureAll>div{
+    padding: 56px 0 0 0;
+    margin-bottom: 74px;
+    background-position-x: 51%;
+    &>dd,&>dt{
+      text-align: center;
+    }
+  }
+  .featureAll{
+    height: 435px;
+  }
+}
+
+
