@@ -167,6 +167,52 @@ $(function () {
 
 
             }
+        })
+        .on('success.form.bv', function(e) {
+            // 因为是发起AJAX请求，所以阻止默认提交表单
+            e.preventDefault();
+            // 获取表单示例
+            var $form = $(e.target);
+            // 获取验证插件的示例
+            var bv = $form.data('bootstrapValidator');
+
+            // 发起AJAX请求提交数据到后台
+            /*
+            $.post(url,data,successCB,dataType)
+            url	必需。规定把请求发送到哪个 URL。
+			data	可选。映射或字符串值。规定连同请求发送到服务器的数据。
+			successCB(data, textStatus, jqXHR)	可选。请求成功时执行的回调函数。
+			dataType
+			可选。规定预期的服务器响应的数据类型。（xml、json、script 或 html）。
+            */
+            var regUrl="/users/checkLogin"; //提交的网址
+            var postData=$form.serialize(); //批量接收表单的值并完成拼接
+
+            //因为有密码，从安全角度考虑使用post请求
+            $.post(regUrl, postData, function(result) {
+                var num=5;
+                $('#loginModal').modal('show');
+
+                if (result.isSuccess){
+                    $("#loginModal .modal-body").html('<span class="glyphicon glyphicon-ok text-danger"></span>'+result.message+'5秒后跳转到会员中心');
+                    var time=setInterval(function () {
+
+                        num--;
+                        $("#loginModal .modal-body").html('<span class="glyphicon glyphicon-ok text-danger"></span>'+result.message+num+'秒后跳转到会员中心');
+                        if (num === 0){
+                            clearInterval(time);
+                            location.href='/memberCenter.html'
+                        }
+                    },1000);
+
+
+
+                }else {
+                    $("#loginModal .modal-body").html('<span class="glyphicon glyphicon-remove"></span>'+result.message);
+                    location.href='#';
+                }
+            }, 'json');
         });
+    ;
 
 });

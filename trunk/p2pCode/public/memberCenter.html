@@ -5,14 +5,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>登陆</title>
+    <title>会员中心</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="dist/css/public.css">
-    <link rel="stylesheet" href="dist/css/joinLogin.css">
     <script src="lib/bootstrap/js/jquery.js"></script>
+    <script src="dist/js/checkUsers.js"></script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
-    <script src="lib/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
-    <script src="dist/js/validate.js"></script>
     <!--<script src="../gulpfile.js"></script>-->
 </head>
 <body>
@@ -39,8 +37,9 @@
 
                 <li><a href="indexWithSign.html">首页</a></li>
                 <li><a href="#">赶快充值</a></li>
-                <li><a href="login.html">登录</a></li>
-                <li><a href="#">快速注册</a></li>
+                <li><a href="#">小强</a></li>
+                <li><a href="/users/delUser">注销</a></li>
+                <li><a href="#">帮助</a></li>
                 <li id="weixinTips" data-html="true" data-toggle="tooltip" data-placement="bottom" title="<img src='images/contract.png'>"><a href="#">联系客服</a></li>
 
 
@@ -57,14 +56,12 @@
             <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
             <ul class="nav navbar-nav navbar-left">
 
-                <li class="active"><a href="indexWithSign.html">首页</a></li>
+                <li class="active"><a href="#">首页</a></li>
                 <li><a href="#">我要投资</a></li>
                 <li><a href="#">我要借款</a></li>
                 <li><a href="memberCenter.html">个人中心</a></li>
                 <li><a href="#">新手指引</a></li>
                 <li><a href="#">关于我们</a></li>
-
-
             </ul>
 
         </div>
@@ -73,53 +70,10 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-<!--内容-->
-<div class="container">
-    <div class="panel panel-default">
-        <div class="panel-heading">用户注册</div>
-        <div class="panel-body">
-            <h4 class="text-muted textUsername">请输入用户名和密码:</h4>
-            <form class="form-horizontal" id="loginForm">
-                <div class="form-group">
-                    <label for="inputusername" class="col-sm-2 control-label col-sm-offset-2">用户名</label>
-                    <div class="col-sm-3">
-                        <input type="text" name="username" class="form-control" id="inputusername" placeholder="请输入用户名">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputpassword" class="col-sm-2 control-label col-sm-offset-2">密&emsp;码</label>
-                    <div class="col-sm-3">
-                        <input type="text" class="form-control" name="password" id="inputpassword" placeholder="请输入密码">
-                    </div>
-                </div>
 
-                    <div class="col-sm-offset-5">
-                        <button type="submit" class="btn btn-success"> &emsp;登陆&emsp; </button>
-                        <a href="join.html">新用户,马上注册</a>
+<h1>会员中心</h1>
 
-                    </div>
-                <!--登陆成功的模态框-->
-                <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" >提示</h4>
-                            </div>
-                            <div class="modal-body">
 
-                                <!--<span class="glyphicon glyphicon-ok text-danger"></span>注册成功<span class="glyphicon glyphicon-remove"></span>-->
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </form>
-        </div>
-    </div>
-</div>
 <!--脚部-->
 <div class="container-fluid footer">
     <div class="container">
