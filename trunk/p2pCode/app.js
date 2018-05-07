@@ -38,8 +38,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(8088,function () {
-    console.log("http://localhost:8088");
+app.listen(8079,function () {
+    console.log("服务器监听成功:localhost:8079");
 });
 
 module.exports = app;

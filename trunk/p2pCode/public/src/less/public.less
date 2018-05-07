@@ -1,0 +1,114 @@
+@colorWhite:white;
+@colorBlue:#09d;
+@deepBlue:#2e8ece;
+
+body{
+  height: 5000px;
+}
+.navbar-inverse{
+  border-radius: 0;
+}
+
+.tooltip img{
+  width: 120px;
+}
+//第一个导航栏
+.firstNav .navbar-brand span:nth-child(2){
+  font-size: 26px;
+  font-style: italic;
+  color: @colorWhite;
+}
+.firstNav .navbar-brand .glyphicon{
+  color: @colorWhite;
+  font-size: 24px;
+}
+.firstNav .navbar-collapse .nav a{
+  color: @colorWhite;
+}
+.navbar{
+  margin-bottom: 0;
+}
+//第二个导航栏
+.secondNav .navbar-left{
+  height: 80px;
+  line-height: 80px;
+  padding: 0px 15px;
+  font-size: 16px;
+}
+.secondNav .navbar-brand img{
+  margin-top: 11px;
+  margin-right: 30px;
+}
+.secondNav .navbar-left li:hover{
+  background: #f1f1f1;
+}
+.secondNav .navbar-left li a:hover{
+  color: @colorBlue;
+}
+.secondNav .navbar-left li a{
+  height: 80px;
+  width: 100px;
+  line-height: 50px;
+  text-align: center;
+}
+
+
+//页脚
+.footer{
+  margin-top: 40px;
+  padding-top:40px ;
+  padding-bottom:60px ;
+  background: #f8f8f8;
+  .container{
+    .weibo,.weixin{
+      p{
+        padding-left: 15px !important;
+      }
+      img{
+        width: 160px;
+      }
+    }
+  }
+}
+
+
+//768屏幕下的样式
+@media all and(max-width: 768px){
+  .firstNav{
+    .navbar-collapse{
+      li a{
+        text-align: center;
+      }
+    }
+  }
+  .secondNav{
+    .navbar-left{
+      height: 490px;
+      &>li a{
+        width: 100%;
+        line-height: 66px;
+      }
+    }
+    .navbar-brand{
+      float: none;
+      display: block;
+      width: 100%;
+      &>img{
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+
+//992屏幕的样式
+@media all and(max-width: 992px)and(min-width: 768px){
+  .secondNav .nav li{
+    a{
+      padding-left: 0;
+      padding-right: 0;
+      width: 80px;
+    }
+  }
+
+}

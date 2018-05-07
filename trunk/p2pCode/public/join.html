@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/css/public.css">
+    <link rel="stylesheet" href="lib/bootstrapvalidator/dist/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="dist/css/joinLogin.css">
+    <script src="lib/bootstrap/js/jquery.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="lib/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+
+
+
+    <!--<script src="../gulpfile.js"></script>-->
+</head>
+<body>
+
+<!--第一个导航栏-->
+<nav class="navbar navbar-inverse">
+    <div class="container firstNav">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-phone-alt"> </span> <span>028-86261949</span></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li><a href="#">首页</a></li>
+                <li><a href="#">赶快充值</a></li>
+                <li><a href="#">登录</a></li>
+                <li><a href="#">快速注册</a></li>
+                <li id="weixinTips" data-html="true" data-toggle="tooltip" data-placement="bottom" title="<img src='images/contract.png'>"><a href="#">联系客服</a></li>
+
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!--第二个导航栏-->
+<nav class="navbar navbar-default secondNav">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header clearfix">
+
+            <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
+            <ul class="nav navbar-nav navbar-left">
+
+                <li class="active"><a href="#">首页</a></li>
+                <li><a href="#">我要投资</a></li>
+                <li><a href="#">我要借款</a></li>
+                <li><a href="#">个人中心</a></li>
+                <li><a href="#">新手指引</a></li>
+                <li><a href="#">关于我们</a></li>
+
+
+            </ul>
+
+        </div>
+
+
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!--内容-->
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">用户注册</div>
+        <div class="panel-body">
+            <h4 class="text-muted col-sm-offset-3">请填写注册信息，点击“提交注册”即可完成注册！</h4>
+            <form class="form-horizontal" id="regist">
+                <div class="form-group">
+                    <label for="inputusername" class="col-sm-2 control-label col-sm-offset-2">用户名</label>
+                    <div class="col-sm-3">
+                        <input type="text" name="username" class="form-control" id="inputusername" placeholder="请输入用户名">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputpassword" class="col-sm-2 control-label col-sm-offset-2">密码</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="password" id="inputpassword" placeholder="请输入密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-sm-2 control-label col-sm-offset-2">邮箱</label>
+                    <div class="col-sm-3">
+                        <input type="email" name="email" class="form-control" id="inputEmail" placeholder="请输入邮箱">
+                    </div>
+                </div>
+                <div class="col-sm-offset-4 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> <a href="javascript:void(0)" data-target="#myModal" id="myModal1" data-toggle="modal">《使用协议说明书》</a>
+                        </label>
+
+                    </div>
+                    <div id="allowTOReg">
+                        <button type="submit" class="btn btn-success">同意并注册</button>
+                        <a href="login.html">已有账号,马上登陆</a>
+                    </div>
+
+                </div>
+                <!--注册协议的模态框开始-->
+                <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--注册协议的模态框结束-->
+
+                <!--注册成功的模态框-->
+                <div class="modal fade" id="sucModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" >提示</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <!--<span class="glyphicon glyphicon-ok text-danger"></span>注册成功<span class="glyphicon glyphicon-remove"></span>-->
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!--footer-->
+<div class="container-fluid footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <p>专业Java培训、PHP培训、UI培训、iOS培训、高级Web前端培训机构</p>
+                <p>版权所有： 2006-2015成都源代码教育咨询有限公司</p>
+                <p>地  址： 成都市高新区府城大道西段399号天府新谷1号楼620-625</p>
+                <p>电  话： 028-86261949  / 400-808-6840  邮箱：</p>
+                <p>yuandaima@itsource.cn</p>
+                <p><a href="">蜀ICP备14030149号-1</a> <a href="">蜀公网安备510114990541</a></p>
+            </div>
+            <div class="col-md-2 weibo"><p>官方微博：</p><img src="images/sina.png" alt=""><img src="images/tecent.png" alt=""></div>
+            <div class="col-md-2 weixin"><p>官方微信：</p><img src="images/wx.jpg" alt=""></div>
+        </div>
+    </div>
+</div>
+<script src="dist/js/p2pJS.js"></script>
+<!--表单验证和发送数据-->
+<script src="dist/js/validate.js"></script>
+
+</body>
+</html>

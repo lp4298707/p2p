@@ -24,6 +24,7 @@
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
+    "mongoose": "^5.0.17",
     "run-sequence": "^2.2.1"
   }
 }

@@ -1,0 +1,127 @@
+@colorWhite:white;
+@colorBlue:#09d;
+@deepBlue:#2e8ece;
+
+
+.feature01{
+  background: url("../../images/feature01.png") no-repeat;
+}
+.feature02{
+  background: url("../../images/feature02.png") no-repeat;
+}
+.feature03{
+  background: url("../../images/feature03.png") no-repeat;
+}
+.featureAll>div{
+  padding-left: 80px;
+  height: 66px;
+}
+.featureAll{
+  margin-top: 10px;
+  height: 100px;
+}
+.featureAll>div>dt{
+  font-size: 18px;
+  margin: 10px 0;
+}
+.borrowing{
+  border-bottom: 1px solid #ccc;
+  span{
+    font-size: 24px;
+    color: @deepBlue;
+    font-weight: bold;
+    border-bottom: 3px solid @deepBlue;
+    padding: 0;
+    text-align: center;
+  }
+
+}
+.borrowingCon{
+  margin-top: 15px;
+  margin-bottom: 40px;
+  thead{
+    font-size: 18px;
+  }
+  tbody tr td{
+    line-height: 29px;
+    font-size: 16px;
+  }
+  //tbody tr td:last-child{
+  //  padding-bottom: 10px;
+  //}
+}
+.companyNews{
+  .col-md-6{
+    margin-top: 50px;
+    p{
+      border-bottom: dotted 1px #ccc;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.news{
+  margin-top: 20px;
+  a:hover{
+    text-decoration: none;
+    color: @colorBlue;
+  }
+}
+//页脚
+.footer{
+  margin-top: 40px;
+  padding-top:40px ;
+  padding-bottom:60px ;
+  background: #f8f8f8;
+  .container{
+    .weibo,.weixin{
+      p{
+        padding-left: 15px !important;
+      }
+      img{
+        width: 160px;
+      }
+    }
+  }
+}
+
+
+//768屏幕下的样式
+@media all and(max-width: 768px){
+  .featureAll>div{
+    padding: 56px 0 0 0;
+    margin-bottom: 74px;
+    background-position-x: 50%;
+    &>dd,&>dt{
+      text-align: center;
+    }
+  }
+  .featureAll{
+    height: 435px;
+  }
+  .borrowingCon .phoneHid{
+    display: none;
+  }
+}
+
+
+
+//992屏幕的样式
+@media all and(max-width: 992px){
+  .featureAll>div{
+    padding: 56px 0 0 0;
+    margin-bottom: 74px;
+    background-position-x: 51%;
+    &>dd,&>dt{
+      text-align: center;
+    }
+  }
+  .featureAll{
+    height: 435px;
+  }
+}
+
+//420屏幕的样式
+@media all and(max-width: 420px){
+
+}
