@@ -1,0 +1,66 @@
+.panel-group{
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.head_icon{
+  width: 92px;
+  padding: 10px;
+  border: solid 1px #ddd;
+  margin-right: 10px;
+  img{
+    width: 72px;
+  }
+}
+.moneyInfo{
+  padding: 0 5px;
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+}
+.certificationBox{
+  border-bottom: solid 1px #ddd;
+  .certification{
+    padding-left: 13%;
+    margin-top: 40px;
+  }
+}
+#switch{
+  display: none;
+  position: relative;
+  left: -16px;
+  top: -15px;
+  //height: 10px;
+}
+body{
+  overflow-x: hidden;
+}
+.active{
+  //transition: all 0.5s linear;
+  left: 0!important;
+}
+.list-group-item{
+  text-indent: 2em;
+}
+@media all and(max-width: 768px) {
+  #memberBox{
+
+    position: relative;
+    transition: all 0.5s linear;
+    left: -51%;
+  }
+  #switch{
+    display: block;
+  }
+  #memberBox{
+    height: 836px;
+    position: relative;
+    //overflow-y: hidden;
+  }
+  #rightCon{
+    position: absolute;
+    top: 0;
+    left: 50%;
+  }
+
+}
+
+

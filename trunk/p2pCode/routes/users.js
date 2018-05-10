@@ -111,11 +111,14 @@ router.post('/checkLogin',function (req,res) {
 router.get('/checkUser',function (req,res) {
     var userId=req.cookies.userid;
     var username=req.cookies.username;
+    var username2=
     console.log(userId,username);
     if (userId && username){
-        res.send(true);
+        // res.send("$('.userName').text("+"'"+username+"'"+")")
+        res.send({'isSuccess':true,'username':username})
     }else {
-        res.send(false);
+        // res.send('alert("登陆已失效,请重新登陆");location.href="login.html"');
+        res.send({'isSuccess':false})
     }
 
 });

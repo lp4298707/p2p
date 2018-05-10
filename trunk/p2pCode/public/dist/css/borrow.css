@@ -1,0 +1,39 @@
+.borrow-item-title {
+  font-size: 22px;
+  width: 100%;
+  background: #40d47e;
+  height: 48px;
+  color: white;
+  text-indent: 1em;
+  line-height: 48px;
+}
+.borrow-item-content {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #f9f9f9;
+  padding-left: 15px;
+}
+.borrow-item-content p:first-child {
+  font-size: 18px;
+  margin-top: 10px;
+}
+.borrow-item-content .borrow-item-info {
+  background: url("../../images/sequare.png") no-repeat;
+  text-indent: 30px;
+  background-position-x: 14px;
+  background-position-y: 2px;
+}
+.borrow-item-content .btnBox {
+  text-align: center;
+}
+.borrow-item-content .btn-info {
+  border-radius: 20px;
+}
+.col-md-4:nth-child(2) .borrow-item-title {
+  background: #ec7e20;
+}
+.col-md-4:nth-child(3) .borrow-item-title {
+  background: #2ca2ee;
+}
+
+/*# sourceMappingURL=maps/borrow.css.map */

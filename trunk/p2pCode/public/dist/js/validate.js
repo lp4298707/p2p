@@ -100,7 +100,7 @@ $(function () {
                     var time=setInterval(function () {
                         $('#sucModal').modal('show');
                         num--;
-                        $("#sucModal .modal-body").html('<span class="glyphicon glyphicon-ok text-danger"></span>'+result.message+num+'秒后跳转到登陆页面');
+                        $("#sucModal .modal-body").prepend('<span class="glyphicon glyphicon-ok text-danger"></span>'+result.message+num+'秒后跳转到登陆页面');
                         if (num === 0){
                             clearInterval(time);
                             location.href='/login.html'

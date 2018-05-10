@@ -1,6 +1,3 @@
-body {
-  height: 5000px;
-}
 .navbar-inverse {
   border-radius: 0;
 }
@@ -84,6 +81,12 @@ body {
     padding-right: 0;
     width: 80px;
   }
+}
+.mt5 {
+  margin-top: 5px;
+}
+.mt10 {
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=maps/public.css.map */

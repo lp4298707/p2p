@@ -5,10 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>会员中心</title>
+    <title>借款信息</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="dist/css/public.css">
-    <link rel="stylesheet" href="dist/css/memberCenter.css">
+    <link rel="stylesheet" href="dist/css/borrowInfo.css">
     <script src="lib/bootstrap/js/jquery.js"></script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
     <!--<script src="../gulpfile.js"></script>-->
@@ -71,7 +71,7 @@
 </nav>
 
 
-<div class="container">
+<div class="container" id="containerBox">
     <div class="row" id="memberBox">
         <div class="col-sm-3 col-xs-6" id="leftNav">
             <!--第一个-->
@@ -156,78 +156,119 @@
             </div>
         </div>
         <div id="rightCon" class="col-sm-9 col-xs-12 mt5">
-            <div class="panel panel-default">
-                <div class="panel-body clearfix">
-                    <p id="switch"><button class="btn btn-primary" id="switchBtn">展开</button></p>
-                    <div class="head_icon pull-left">
-                        <img src="images/head_icon.jpg" alt="">
-                    </div>
-                    <div class="pull-left">
-                        <p>昵 称：源代码教育</p>
-                        <p>用户名：<span class="userName"></span></p>
-                        <p>最后登录时间：2016-10-25 15:30:10
-
-                        </p>
-                    </div>
-                    <div style="clear: both"></div>
-                    <div class="moneyInfo clearfix row">
-                        <h4 class="col-lg-4"><span>总金额：</span><span class="text-info">10000元</span></h4>
-                        <h4 class="col-lg-4">总金额：<span class="text-info ">可用金额：8000元</span></h4>
-                        <h4 class="col-lg-4">总金额：<span class="text-info ">冻结金额：2000元</span></h4>
-
-                    </div>
-                    <div class="text-center mt10">
-                        <button type="button" class="btn btn-primary btn-lg">账户充值</button>
-                        <button type="button" class="btn btn-danger btn-lg">账户提现</button>
-                    </div>
-                    <div class="certificationBox clearfix">
-                        <div class="clearfix col-sm-6 certification">
-                            <div class="pull-left"><img src="images/shiming.png" alt=""></div>
-                            <div class="pull-left">
-                                <b>实名认证</b>
-                                <p>未认证 <a href="">马上认证</a></p>
-                            </div>
-                            <div class="clearfix"></div>
-                            <p>实名认证之后才能在平台投资</p>
-
-                        </div>
-                        <div class="clearfix col-sm-6 certification">
-                            <div class="pull-left"><img src="images/shouji.jpg" alt=""></div>
-                            <div class="pull-left">
-                                <b>手机认证</b>
-                                <p>已认证 <a href="">查看</a></p>
-                            </div>
-                            <div class="clearfix"></div>
-                            <p>可以收到系统操作信息,并增加使用安全性</p>
-
-                        </div>
-                        <div class="clearfix col-sm-6 certification">
-                            <div class="pull-left"><img src="images/youxiang.jpg" alt=""></div>
-                            <div class="pull-left">
-                                <b>邮箱认证</b>
-                                <p>未认证 <a href="">查看</a></p>
-                            </div>
-                            <div class="clearfix"></div>
-                            <p>您可以设置邮箱来接收重要信息</p>
-
-                        </div>
-                        <div class="clearfix col-sm-6 certification">
-                            <div class="pull-left"><img src="images/baozhan.jpg" alt=""></div>
-                            <div class="pull-left">
-                                <b>VIP会员</b>
-                                <p>普通用户 <a href="">查看</a></p>
-                            </div>
-                            <div class="clearfix"></div>
-                            <p>VIP会员，让你更快捷的投资</p>
-
-                        </div>
-                    </div>
-
-                </div>
-
+            <div class="borrow_info_title">
+                <p id="switch"><button class="btn btn-primary" id="switchBtn">展开</button></p>
+                <h3>信用借款</h3>
+                <p>授信额度：<span>2000</span>    可借金额：<span>2000</span></p>
             </div>
+            <div class="borrow_content_head">
+                <p>借款信息</p>&emsp;<label class="label label-primary">信用标</label>
+            </div>
+            <div class="borrow_content clearfix">
+                <div class="borrow_content_left pull-left">
 
 
+                    <form class="bs-example bs-example-form" data-example-id="simple-input-groups">
+                        <div class="content_left_item">
+                            <label class="col-sm-3">借款金额</label>
+                            <div class="input-group col-sm-3">
+                                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon2">
+                                <span class="input-group-addon">元</span>
+                            </div>
+                        </div>
+                        <div class="content_left_item">
+                            <label class="col-sm-3">借款金额</label>
+                            <div class="input-group col-sm-3">
+                                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon2">
+                                <span class="input-group-addon">元</span>
+                            </div>
+                        </div>
+                        <div class="content_left_item">
+                            <label class="col-sm-3">借款金额</label>
+                            <div class="input-group col-sm-3">
+                                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon2">
+                                <span class="input-group-addon">元</span>
+                            </div>
+                        </div>
+                        <div class="content_left_item">
+                            <label class="col-sm-3">借款金额</label>
+                            <div class="input-group col-sm-3">
+                                <select class="form-control" placeholder="" aria-describedby="basic-addon2">
+                                    <option>1</option>
+                                    <option>3</option>
+                                    <option>6</option>
+                                    <option>9</option>
+                                    <option>12</option>
+                                    <option>24</option>
+                                </select>
+
+                                <span class="input-group-addon">元</span>
+                            </div>
+                        </div>
+                        <div class="content_left_item">
+                            <label class="col-sm-3">借款金额</label>
+                            <div class="input-group col-sm-3">
+                                <label><input type="radio" name="repaymentWay">按月分期</label>
+                                &emsp;<label><input type="radio" name="repaymentWay" >按季分期</label>
+                            </div>
+                        </div>
+                        <div class="content_left_item">
+                            <label class="col-sm-3">借款金额</label>
+                            <div class="input-group col-sm-3">
+                                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon2">
+                                <span class="input-group-addon">元</span>
+                            </div>
+                        </div>
+                        <div class="content_left_item">
+                            <label class="col-sm-3">投标奖金</label>
+                            <div class="input-group col-sm-3">
+                                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon2" value="0">
+                                <span class="input-group-addon">%</span>
+                            </div>
+                        </div>
+                        <div class="content_left_item">
+                            <label class="col-sm-3">借款金额</label>
+                            <div class="input-group col-sm-3">
+                                <select class="form-control" placeholder="" aria-describedby="basic-addon2">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                </select>
+
+                                <span class="input-group-addon">天</span>
+                            </div>
+                        </div>
+                        <div class="content_left_item">
+                            <label class="col-sm-3">借款标题</label>
+                            <div class="input-group col-sm-6">
+                                <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon2">
+                            </div>
+                        </div>
+                        <div class="content_left_item">
+                            <label class="col-sm-3">借款标题</label>
+                            <div class="input-group col-sm-6">
+                                <textarea name="description" rows="4"></textarea>
+                            </div>
+                        </div>
+                        <p class="btnBox"><button class="btn btn-primary">提交申请</button></p>
+                    </form>
+                </div>
+                <div class="col-sm-5 borrow_content_right">
+                    <h4>相关费用</h4>
+                    <p><span class="text-primary">利息</span> --</p>
+                    <p><span class="text-primary">奖金</span> --</p>
+                    <p><span class="text-primary">管理费</span> --</p>
+                </div>
+            </div>
         </div>
     </div>
 

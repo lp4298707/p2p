@@ -1,0 +1,138 @@
+.list-group-item{
+  text-indent: 2em;
+
+}
+.panel-group {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.borrow_info_title{
+  background-color: #F4F8FA;
+  border-left: solid 2px #0099DD;
+  padding:20px 0 20px 20px;
+  h3{
+    color: #09d;
+  }
+  p{
+    color: #31708f;
+    span{
+      color: #a94442;
+    }
+  }
+}
+
+#switch{
+  display: none;
+  position: relative;
+  left: -16px;
+  top: -15px;
+  //height: 10px;
+}
+body{
+  overflow-x: hidden;
+}
+.active{
+  //transition: all 0.5s linear;
+  left: 0!important;
+}
+
+@media all and(max-width: 768px) {
+  #memberBox{
+
+    position: relative;
+    transition: all 0.5s linear;
+    left: -51%;
+  }
+  #switch{
+    display: block;
+  }
+  #memberBox{
+    height: 836px;
+    position: relative;
+    //overflow-y: hidden;
+  }
+  #rightCon{
+    position: absolute;
+    top: 0;
+    left: 50%;
+  }
+
+}
+
+//内容的页头
+.borrow_content_head{
+  border-bottom: solid 1px #ddd;
+  margin: 20px 0 20px 0;
+  p{
+    font-size: 20px;
+    display: inline-block;
+  }
+  label{
+    font-size: 16px;
+
+  }
+}
+
+//内容
+.borrow_content{
+  position: relative;
+  .bs-example{
+    label{
+      padding-left: 25px;
+      height: 34px;
+      margin-bottom: 0;
+      line-height: 34px;
+    }
+  }
+}
+
+
+
+//内容里面的左边的样式
+.borrow_content_left{
+  //margin-left: 100px;
+  //width: 80px;
+  .content_left_item{
+    margin-bottom: 10px;
+  }
+  .input-group label{
+    padding-left: 2px;
+
+  }
+  textarea{
+    width: 100%;
+    resize: none;
+    border: #ccc solid 1px;
+  }
+  .btnBox{
+    padding-left: 25%;
+  }
+  label.col-sm-3{
+    text-align: right;
+  }
+}
+
+
+
+//内容里面的右边的样式
+.borrow_content_right{
+  padding: 20px 30px;
+  //display: none;
+  border: solid 1px #ddd;
+  width: 300px;
+  height: 174px;
+  position: absolute;
+  top: 2%;
+  left: 54%;
+}
+
+
+@media all and(max-width: 768px) {
+  #containerBox{
+    height: 1094px;
+    .borrow_content_right{
+      top: 73%;
+    }
+  }
+}
