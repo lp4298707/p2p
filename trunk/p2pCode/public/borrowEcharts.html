@@ -5,14 +5,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>借款信息</title>
+    <title>echarts</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="dist/css/public.css">
-    <link rel="stylesheet" href="dist/css/borrowlist.css">
+    <link rel="stylesheet" href="dist/css/borrowInfo.css">
     <script src="lib/bootstrap/js/jquery.js"></script>
     <!--<script src="dist/js/checkUsers.js"></script>-->
     <script src="users/checkUser"></script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="lib/echarts/echarts-all.js"></script>
     <!--<script src="../gulpfile.js"></script>-->
 </head>
 <body>
@@ -157,42 +158,9 @@
 
             </div>
         </div>
-        <div class="col-sm-9 mt5">
-            <div class="panel panel-default">
-                <div class="panel-heading">借款项目</div>
-                <div class="panel-body">
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>标题</th>
-                            <th>时间</th>
-                            <th>借款金额(元)</th>
-                            <th>期限</th>
-                            <th>利率</th>
-                            <th>状态</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <a target="_blank" href="borrow_info.html">江湖救急</a><span class="label label-primary">信</span>
-                            </td>
-                            <td>2016-01-02</td>
-                            <td>2000</td>
-                            <td>12月</td>
-                            <td>12%</td>
+        <div id="rightCon" class="col-sm-9 col-xs-12 mt5">
+            <div style="height: 500px" id="echartsBox">
 
-                            <td>
-                                <label class="text-muted">待发布</label>
-                                <label class="text-success">招标中</label>
-                                <label class="text-success">满标未审核</label>
-                                <label class="text-success">还款中</label>
-                                <label class="text-danger">招标拒绝</label>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
             </div>
         </div>
     </div>
@@ -220,7 +188,74 @@
 
 
 <script src="dist/js/p2pJS.js"></script>
-
 <script src="users/getUserName"></script>
+<script>
+    var mychart =echarts.init(document.querySelector('#echartsBox'));
+
+    // 2. 坐报表相关的配置
+    option = {
+        title : {
+            text: '蓝源贷款方式统计',
+            subtext: '2018-5',
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient : 'vertical',
+            x : 'left',
+            data:['信用贷','房易贷','信用贷']
+        },
+        toolbox: {
+            show : false,
+            feature : {
+                mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType : {
+                    show: true,
+                    type: ['pie', 'funnel'],
+                    option: {
+                        funnel: {
+                            x: '25%',
+                            width: '50%',
+                            funnelAlign: 'left',
+                            max: 1548
+                        }
+                    }
+                },
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        calculable : true,
+        series : [
+            {
+                name:'访问来源',
+                type:'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                data:[
+                    {value:335, name:'直接访问'},
+                    {value:310, name:'邮件营销'},
+                    {value:234, name:'联盟广告'}
+
+                ]
+            }
+        ]
+    };
+
+
+    // 3. 在报表对象中，使用配置
+    mychart.setOption(option);
+
+
+    $.get('borrow/getEcharts',function (data) {
+        console.log(data);
+        option.series[0].data=data;
+        mychart.setOption(option);
+    })
+</script>
 </body>
 </html>

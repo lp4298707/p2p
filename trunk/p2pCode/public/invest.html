@@ -8,8 +8,13 @@
     <title>投资</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="dist/css/public.css">
+    <link rel="stylesheet" href="lib/pagination/jquery.pagination.css">
     <script src="lib/bootstrap/js/jquery.js"></script>
+    <script src="lib/pagination/jquery.pagination-1.2.7.min.js"></script>
+    <!--<script src="dist/js/checkUsers.js"></script>-->
+    <script src="users/checkUser"></script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="lib/artTemplate/template.js"></script>
     <!--<script src="../gulpfile.js"></script>-->
 </head>
 <body>
@@ -36,8 +41,9 @@
 
                 <li><a href="indexWithSign.html">首页</a></li>
                 <li><a href="#">赶快充值</a></li>
-                <li><a href="login.html">登录</a></li>
-                <li><a href="join.html">快速注册</a></li>
+                <li><a href="memberCenter.html" class="userName"></a></li>
+                <li><a href="/users/delUser">注销</a></li>
+                <li><a href="#">帮助</a></li>
                 <li id="weixinTips" data-html="true" data-toggle="tooltip" data-placement="bottom" title="<img src='images/contract.png'>"><a href="#">联系客服</a></li>
 
 
@@ -70,9 +76,47 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-<div>
-    <h1> 投资 </h1>
+<div class="container">
+    <h4 class="page-title">投资列表</h4>
+    <form action="invest_list.html" id="searchForm">
+        <div style="margin: 20px 0px;">
+            <span class="text-muted">标的状态</span><div style="margin-left: 30px" class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default active">
+                <input type="radio" name="bidRequestState" value="-1" autocomplete="off" checked=""> 全部 
+            </label>
+            <label class="btn btn-default">
+                <input type="radio" name="bidRequestState" value="2" autocomplete="off"> 招标中 
+            </label>
+            <label class="btn btn-default">
+                <input type="radio" name="bidRequestState" value="8" autocomplete="off"> 还款中 
+            </label>
+        </div>
+        </div>
+    </form>
+    <table class="table el-table table-hover">
+        <thead id="gridHead">
+        <tr>
+            <th>借款人</th>
+            <th width="180px">借款标题</th>
+            <th>年利率</th>
+            <th>金额</th>
+            <th>还款方式</th>
+            <th>进度</th>
+            <th width="80px">操作</th>
+        </tr>
+        </thead>
+        <tbody id="gridBody">
 
+
+
+        </tbody>
+    </table>
+    <div style="text-align: center;">
+        <ul id="pagination" class="pagination"></ul>
+    </div>
+    <section id="demo">
+        <div id="page" class="m-pagination"></div>
+    </section>
 </div>
 <!--脚部-->
 <div class="container-fluid footer">
@@ -91,9 +135,43 @@
         </div>
     </div>
 </div>
-
-
 <script src="dist/js/p2pJS.js"></script>
-<script src="dist/js/checkUsers.js"></script>
+<script src="users/getUserName"></script>
+
+<script type="text/html" id="tmpl">
+    {{each list as v i}}
+    <tr>
+        <td>{{v.borrowPerson}}</td>
+        <td>{{v.borrowTitle}}</td>
+        <td class="text-info">{{v.borrowTerm}}</td>
+        <td class="text-info">{{v.borrowMoney}}</td>
+        <td>{{v.repayment}}</td>
+        <td>{{(v.investMoney/v.borrowMoney*100)}}%</td>
+        <td><a class="btn btn-danger btn-sm" href="borrow_list.html?id={{v._id}}">查看</a></td>
+    </tr>
+    {{/each}}
+</script>
+
+<!--"borrowMoney":3000,"borrowRate":11,"borrowTerm":12,"repayment":"按月分期","minMoney":100,"maxMoney":500,"borrowBonus":0.05,"borrowDays":4,"borrowTitle":"我张三要借钱","borrowDetails":"我张三要借钱我张三要借钱我张三要借钱","borrowType":"信用贷","borrowPerson":"zhangsan","borrowDate":"2018-05-10T05:17:39.000Z","isPass":false,"passDatetime":"2050-05-10T05:17:55.000Z","investMoney":0,"isComplated":false,"__v":0}-->
+
+<script>
+    $("#page").page({
+        debug: true,
+        showInfo: true,
+        showJump: true,
+        showPageSizes: true,
+        pageSize:2,
+        remote: {
+            // url: 'lib/pagination/data.json',
+            url: 'borrow/getlist',
+            success: function (data) {
+                // $("#eventLog").append(' remote callback : ' + data + '<br />');
+                var html = template('tmpl',data);
+                $("#gridBody").html(html);
+            }
+        }
+    });
+
+</script>
 </body>
 </html>

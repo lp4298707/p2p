@@ -32,4 +32,17 @@ $(function () {
         }
     }
 
+
+    //借款信息的请求
+    
+    $("#borrowBtn").on('click',function (e) {
+        e.preventDefault();
+        $.post('borrow/add',$("#borrowForm").serialize(),function (data) {
+            // console.log(data.message);
+            alert(data.message);
+            location.href='invest.html';
+        })
+    })
+
+
 });

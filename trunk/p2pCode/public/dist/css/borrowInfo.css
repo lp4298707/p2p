@@ -87,6 +87,16 @@ body {
 .borrow_content_left label.col-sm-3 {
   text-align: right;
 }
+.borrowDate {
+  position: relative;
+}
+.borrowDate .glyphicon {
+  position: absolute;
+  top: 21%;
+  left: 86%;
+  z-index: 100;
+  font-size: 20px;
+}
 .borrow_content_right {
   padding: 20px 30px;
   border: solid 1px #ddd;
